@@ -21,11 +21,6 @@ class Api
         }
     }
 
-    public function CreateCollection()
-    {
-        return new Collection();
-    }
-
     public function GetCollection($ID)
     {
         $files = scandir(self::COLLECTIONPATH);
