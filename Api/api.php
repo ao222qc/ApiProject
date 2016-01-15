@@ -6,13 +6,18 @@ require_once("Artifact.php");
 
 class Api
 {
-    const PATH = "Collections/";
+    const COLLECTIONPATH = "Collections/";
+    const ARTIFACTPATH = "Artifacts/";
 
     public function __construct()
     {
-        if (!is_dir(self::PATH))
+        if (!is_dir(self::COLLECTIONPATH))
         {
-            mkdir(self::PATH);
+            mkdir(self::COLLECTIONPATH);
+        }
+        if (!is_dir(self::ARTIFACTPATH))
+        {
+            mkdir(self::ARTIFACTPATH);
         }
     }
 
@@ -23,14 +28,14 @@ class Api
 
     public function GetCollection($ID)
     {
-        $files = scandir(self::PATH);
+        $files = scandir(self::COLLECTIONPATH);
 
         if(!in_array($ID, $files))
         {
             return null;
         }
 
-        $raw = file_get_contents(self::PATH.$ID);
+        $raw = file_get_contents(self::COLLECTIONPATH.$ID);
         return unserialize($raw);
     }
 
