@@ -7,5 +7,3 @@ require_once("template.php");
 Template::Init();
 
 $api = new Api();
-
-$api->CreateCollection();
