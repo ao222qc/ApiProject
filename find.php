@@ -29,6 +29,10 @@ if (isset($_GET[$ID]))
             $path = Api::APIPATH.Api::ARTIFACTPATH.$item->GetID();
             echo "<li><a href='{$path}' download='{$item->GetFilename()}'><b>{$item->GetFilename()}</b></a> <i>({$item->GetID()})</i></li>";
         }
+        elseif($item instanceof Collection)
+        {
+            echo "<li><a href='find.php?id={$item->GetID()}'>{$item->GetName()}</a></li>";
+        }
     }
     echo "<li><a href='upload.php?CollectionID={$collection->GetID()}'>Upload artifact</a></li>";
     echo "</ul>";
