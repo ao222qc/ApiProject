@@ -3,26 +3,23 @@
     class Artifact{
         private $ID;
         private $Filename;
-        private $TypeOfFile;
+        private $Type;
         private $Size; ////testhg jhgj
 
-        public function __Construct()
+        public function __Construct($file)
         {
-            // time to construct!
+            $this->Filename = $file["name"];
+            $this->Size = $file["size"];
+            $this->Type = $file["type"];
+            $this->ID = Helper::GenerateID();
+
+            move_uploaded_file($file["tmp_name"], Api::ARTIFACTPATH.$this->ID);
         }
-        public function setId($ID)
-        {
-            $this->ID = $ID;
-        }
-        public function getID()
+        public function GetID()
         {
           return $this->ID;
         }
-        public function setFilename($Filename)
-        {
-            $this->Filename = $Filename;
-        }
-        public function getFilename()
+        public function GetFilename()
         {
           return $this->Filename;
         }
