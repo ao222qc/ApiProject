@@ -6,9 +6,11 @@ class Collection
     private $name;
     private $list = array();
 
-    public function __construct()
+    public function __construct($Name)
     {
         $this->ID = Helper::GenerateID();
+        $this->name = $Name;
+
         $this->save();
     }
 
