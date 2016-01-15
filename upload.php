@@ -24,9 +24,12 @@ if (isset($_FILES[$FILE]) && isset($_POST[$CID]))
 
     if ($collection != null)
     {
-        $collection->AddArtifact($_FILES[$FILE]);
+        $collection->AddArtifact( new Artifact($_FILES[$FILE]) );
     }
-    echo "Collection does not exist";
+    else
+    {
+        echo "Collection does not exist";
+    }
 
 }
 
