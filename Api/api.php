@@ -2,6 +2,7 @@
 
 class Api
 {
+    const $PATH = "Collections/";
 
     public function CreateCollection()
     {
@@ -13,6 +14,10 @@ class Api
     }
 
     public function GetCollection()
+    {
+
+    }
+    public function deleteCollection($ID)
     {
 
     }
