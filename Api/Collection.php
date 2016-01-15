@@ -6,18 +6,10 @@ class Collection
     private $name;
     private $list = array();
 
-    public function __construct($folderID = NULL)
+    public function __construct()
     {
-        if($folderID == NULL)
-        {
-            $this->ID = Helper::GenerateID();
-            $this->save();
-        }
-        else
-        {
-            $this->ID = $folderID;
-            $this->load();
-        }
+        $this->ID = Helper::GenerateID();
+        $this->save();
     }
 
     public function GetID()
@@ -47,18 +39,7 @@ class Collection
 
     private function save()
     {
-        $myfile = fopen(Api::PATH . $this->GetID(),"w+");
-        fwrite($myfile, serialize($this));
-        fclose($myfile);
-    }
-
-    private function load()
-    {
-        $myfile = fopen(Api::PATH . $this->GetID(), "r+");
-
-
-
-        fclose($myfile);
+        file_put_contents(Api::PATH . $this->GetID(), serialize($this));
     }
 
 }
