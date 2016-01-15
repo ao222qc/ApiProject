@@ -1,5 +1,5 @@
 <?php
 
-require_once("Collection.php");
-require_once("Helper.php");
-require_once("Artifact.php");
+require_once("Api/Collection.php");
+require_once("Api/Helper.php");
+require_once("Api/Artifact.php");
