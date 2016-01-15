@@ -24,12 +24,12 @@ class Collection
 
     public function AddArtifactToList(Artifact $artifact)
     {
-        $this->list = $artifact;
+        $this->list[] = $artifact;
     }
 
-    public function Delete()
+    public function Delete($id)
     {
-
+        unset($this->list[$id]);
     }
 
     public function GetList()
