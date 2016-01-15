@@ -8,6 +8,7 @@ class Api
 {
     const COLLECTIONPATH = "Collections/";
     const ARTIFACTPATH = "Artifacts/";
+    const APIPATH = "Api/";
 
     public function __construct()
     {
