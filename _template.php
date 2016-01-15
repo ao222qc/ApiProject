@@ -4,8 +4,9 @@
     </head>
     <body>
         <h1>Api tester</h1>
-        <a href="collection.php">Find collection</a>
-        <a href="upload.php">Upload artifact</a>
+        <a href="collection.php">Find a collection</a>
+        <a href="create.php">Create a collection</a>
+        <a href="upload.php">Upload an artifact</a>
         <hr>
         <?= Template::$Body ?>
     </body>
