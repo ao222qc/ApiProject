@@ -3,6 +3,8 @@
 class Api
 {
 
+    public function createDirectory(){
 
+    }
 
 }
