@@ -9,13 +9,14 @@ class Api
         $collection = new Collection();
     }
 
-    public function GetCollection($folderID)
+    public function GetCollection($ID)
     {
-
+        $raw = file_get_contents(self::PATH.$ID);
+        return unserialize($raw);
     }
 
-    public function DeleteCollection($folderID)
+    public function DeleteCollection($ID)
     {
-
+        unlink(self::PATH.$ID);
     }
 }
