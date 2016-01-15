@@ -5,25 +5,30 @@ class Collection
     private $ID;
     private $name;
     private $list = array();
-    
+
     public function __construct()
     {
-       
+        $this->ID = Helper::GenerateID();
     }
-    
-    public function AddToList()
+
+    public function AddCollectionToList()
     {
-        //$this->list[] = whatever you want bb
+        $this->list[] = new Collection();
     }
-    
+
+    public function AddArtifactToList(Artifact $artifact)
+    {
+        $this->list = $artifact;
+    }
+
     public function Delete()
     {
-        
+
     }
-    
+
     public function GetList()
     {
         return $this->list;
     }
-    
+
 }
