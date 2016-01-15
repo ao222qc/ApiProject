@@ -9,6 +9,7 @@ $body = '
     <br>
     <form action="" method="GET">
         Collection name: <input name="'.$NAME.'">
+        <br>
         Add to collection: <input name="'.$PID.'">
         <button>Create and open</button>
     </form>
@@ -19,11 +20,10 @@ echo $body;
 if (isset($_GET[$NAME]))
 {
     $collection = new Collection($_GET[$NAME]);
-    api->AddCollection($collection);
 
     if (isset($_GET[$PID]))
     {
-        $parent = api->GetCollection($_GET[$PID]);
+        $parent = $api->GetCollection($_GET[$PID]);
         if ($parent != null)
         {
             $parent->AddCollection($collection);
