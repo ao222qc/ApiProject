@@ -4,7 +4,7 @@
         private $ID;
         private $Filename;
         private $TypeOfFile;
-        private $Size; //ajhvsdf
+        private $Size; ////testhg jhgj
 
         public function __Construct()
         {
