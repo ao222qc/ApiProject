@@ -18,8 +18,6 @@ class Collection
             $this->ID = $folderID;
             $this->load();
         }
-
-
     }
 
     public function GetID()
@@ -49,14 +47,14 @@ class Collection
 
     private function save()
     {
-        $myfile = fopen("Collections/". $this->GetID(),"w+");
+        $myfile = fopen(Api::PATH . $this->GetID(),"w+");
         fwrite($myfile, serialize($this));
         fclose($myfile);
     }
 
     private function load()
     {
-        $myfile = fopen("Collections/" . $this->GetID(), "r+");
+        $myfile = fopen(Api::PATH . $this->GetID(), "r+");
 
 
 

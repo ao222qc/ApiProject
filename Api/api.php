@@ -2,7 +2,7 @@
 
 class Api
 {
-    const $PATH = "Collections/";
+    const PATH = "Collections/";
 
     public function CreateCollection()
     {
