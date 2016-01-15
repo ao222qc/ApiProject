@@ -29,6 +29,8 @@ if (isset($_GET[$NAME]))
             $parent->AddCollection($collection);
         }
     }
+
+    header("Location: find.php?id=".$collection->GetID());
 }
 
 Template::Render();
