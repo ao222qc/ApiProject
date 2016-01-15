@@ -23,6 +23,13 @@ class Api
 
     public function GetCollection($ID)
     {
+        $files = scandir(self::PATH);
+
+        if(!in_array($ID, $files))
+        {
+            return null;
+        }
+
         $raw = file_get_contents(self::PATH.$ID);
         return unserialize($raw);
     }
