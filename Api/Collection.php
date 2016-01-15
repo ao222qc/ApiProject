@@ -17,19 +17,22 @@ class Collection
         return $this->ID;
     }
 
-    public function AddCollection()
+    public function AddCollection(Collection $c)
     {
-        $this->list[] = new Collection();
+        $this->list[$c->GetID()] = $c;
+        $this->save();
     }
 
     public function AddArtifact(Artifact $artifact)
     {
-        $this->list[] = $artifact;
+        $this->list[$artifact->GetID()] = $artifact;
+        $this->save();
     }
 
     public function Delete($id)
     {
         unset($this->list[$id]);
+        $this->save();
     }
 
     public function GetList()
