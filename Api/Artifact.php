@@ -1,4 +1,4 @@
-<?php>
+<?php
     // Artifact()
     class Artifact{
         private $ID;

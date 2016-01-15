@@ -8,7 +8,12 @@ class Collection
 
     public function __construct()
     {
-        $this->ID = Helper::GenerateID();
+       $this->ID = Helper::GenerateID();
+    }
+
+    public function GetID()
+    {
+        return $this->ID;
     }
 
     public function AddCollectionToList()
