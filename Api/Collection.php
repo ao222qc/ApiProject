@@ -27,9 +27,9 @@ class Collection
         $this->list = $artifact;
     }
 
-    public function Delete()
+    public function Delete($id)
     {
-
+        unset($this->list[$id]);
     }
 
     public function GetList()
