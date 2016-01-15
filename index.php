@@ -7,4 +7,7 @@ require_once("Api/api.php");
 
 $api = new Api();
 
-$api->CreateCollection();
+//$api->CreateCollection();
+
+//$file = $api->GetCollection("9ab74b");
+
