@@ -39,7 +39,7 @@ class Collection
 
     private function save()
     {
-        file_put_contents(Api::PATH . $this->GetID(), serialize($this));
+        file_put_contents(Api::COLLECTIONPATH . $this->GetID(), serialize($this));
     }
 
 }
