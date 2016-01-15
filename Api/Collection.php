@@ -19,6 +19,11 @@ class Collection
         return $this->ID;
     }
 
+    public function GetName()
+    {
+        return $this->name;
+    }
+
     public function AddCollection(Collection $c)
     {
         $this->list[$c->GetID()] = $c;
