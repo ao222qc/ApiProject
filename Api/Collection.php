@@ -17,12 +17,12 @@ class Collection
         return $this->ID;
     }
 
-    public function AddCollectionToList()
+    public function AddCollection()
     {
         $this->list[] = new Collection();
     }
 
-    public function AddArtifactToList(Artifact $artifact)
+    public function AddArtifact(Artifact $artifact)
     {
         $this->list[] = $artifact;
     }
