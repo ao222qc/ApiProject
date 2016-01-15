@@ -1,13 +1,9 @@
 <?php
 
-abstract class Helper
+class Helper
 {
-    
-   // abstract  function GenerateID()
+   static function GenerateID()
     {
-        //return randomid
+        return substr(md5(microtime().rand()), 0, 6);
     }
-    
-    
-    
 }
