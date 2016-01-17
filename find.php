@@ -47,6 +47,7 @@ if (isset($_GET[$ID]))
         }
 
         echo " <a href='share.php?id={$item->GetID()}&fcid={$collection->GetID()}'>Share</a>";
+        echo " <a href='update.php?cid={$collection->GetID()}&id={$item->GetID()}'>Update</a>";
         echo " <a href='find.php?id={$collection->GetID()}&delete={$item->GetID()}'>Delete</a>";
         echo "</li>";
 
