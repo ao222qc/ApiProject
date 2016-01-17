@@ -14,19 +14,18 @@ if (isset($_GET[$CID]))
 
 $body = '
     <br>
-    <form enctype="multipart/form-data" action="" method="POST">
-        Collection ID:
-        <input name="' .$CID. '" value="'.$preCollectionID.'"><a href="find.php?id='.$preCollectionID.'">Go to collection</a>
+   <form enctype="multipart/form-data" action="?CollectionID='.$preCollectionID.'" method="POST">
+        Upload artifact to collection <b><a href="find.php?id='.$preCollectionID.'">'.$preCollectionID.'</a></b>
         <br>
         <input type="file" name="'.$FILE.'">
         <br>
         <button>Upload</button>
     </form>
 ';
-if (isset($_FILES[$FILE]) && isset($_POST[$CID]))
+if (isset($_FILES[$FILE]) && isset($_GET[$CID]))
 {
 
-    $collectionID = $_POST[$CID];
+    $collectionID = $_GET[$CID];
 
     $collection = $api->GetCollection($collectionID);
 
