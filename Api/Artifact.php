@@ -26,7 +26,7 @@
             return $this->Extension;
         }
 
-        public function Delete()
+        public function Suicide()
         {
             if(file_exists(Api::ARTIFACTPATH.$this->ID))
                 unlink(Api::ARTIFACTPATH.$this->ID);
@@ -34,7 +34,7 @@
 
         public function Update($file)
         {
-            $this->Delete();
+            $this->Suicide();
             move_uploaded_file($file["tmp_name"], Api::ARTIFACTPATH.$this->ID);
         }
 
