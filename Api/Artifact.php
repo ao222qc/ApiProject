@@ -3,31 +3,39 @@
     class Artifact{
         private $ID;
         private $Filename;
-        private $Type;
-        private $Size; ////testhg jhgj
+        private $Extension;
 
         public function __Construct($file)
         {
             $this->Filename = $file["name"];
-            $this->Size = $file["size"];
-            $this->Type = $file["type"];
             $this->ID = Helper::GenerateID();
+            $this->Extension = pathinfo($file["name"])["extension"];
 
             move_uploaded_file($file["tmp_name"], Api::ARTIFACTPATH.$this->ID);
         }
         public function GetID()
         {
-          return $this->ID;
+            return $this->ID;
         }
         public function GetFilename()
         {
-          return $this->Filename;
+            return $this->Filename;
+        }
+        public function GetExtension()
+        {
+            return $this->Extension;
         }
 
         public function Delete()
         {
             if(file_exists(Api::ARTIFACTPATH.$this->ID))
                 unlink(Api::ARTIFACTPATH.$this->ID);
+        }
+
+        public function Update($file)
+        {
+            $this->Delete();
+            move_uploaded_file($file["tmp_name"], Api::ARTIFACTPATH.$this->ID);
         }
 
         public function IsGhost()
