@@ -27,7 +27,7 @@ if (isset($_FILES[$FILE]) && isset($_GET[$CID]))
 
     $collectionID = $_GET[$CID];
 
-    $collection = $api->GetCollection($collectionID);
+    $collection = Api::GetCollection($collectionID);
 
     if ($collection != null)
     {

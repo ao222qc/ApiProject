@@ -12,8 +12,8 @@ if(isset($_GET["id"]) && isset($_GET["fcid"]))
 
     if(isset($_GET["cid"]))
     {
-        $originalCollection = $api->GetCollection($collectionID);
-        $targetCollection = $api->GetCollection($_GET["cid"]);
+        $originalCollection = Api::GetCollection($collectionID);
+        $targetCollection = Api::GetCollection($_GET["cid"]);
 
         if($originalCollection != NULL && $targetCollection != NULL)
         {

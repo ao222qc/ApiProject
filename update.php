@@ -13,7 +13,7 @@ if(isset($_GET["id"]) && isset($_GET["cid"]))
     $itemID = $_GET["id"];
     $collectionID = $_GET["cid"];
 
-    $originalCollection = $api->GetCollection($collectionID);
+    $originalCollection = Api::GetCollection($collectionID);
 
     if($originalCollection != NULL)
     {

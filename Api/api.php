@@ -22,7 +22,7 @@ class Api
         }
     }
 
-    public function GetCollection($ID)
+    static public function GetCollection($ID)
     {
         $files = scandir(self::COLLECTIONPATH);
 
@@ -35,8 +35,9 @@ class Api
         return unserialize($raw);
     }
 
-    public function DeleteCollection($ID)
+    static public function DeleteCollection($ID)
     {
-        unlink(self::PATH.$ID);
+        $collection = $this->GetCollection($ID);
+        $collection->Suicide();
     }
 }
