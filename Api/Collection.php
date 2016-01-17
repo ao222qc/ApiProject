@@ -13,6 +13,20 @@ class Collection
 
         $this->save();
     }
+    //On unserialize
+    public function __wakeup()
+    {
+        foreach ($this->list as $item)
+        {
+            if ($item instanceof Artifact)
+            {
+                if ($item->IsGhost())
+                {
+                    unset($this->list[$item->GetID()]);
+                }
+            }
+        }
+    }
 
     public function GetID()
     {
@@ -36,9 +50,22 @@ class Collection
         $this->save();
     }
 
+    public function GetArtifact($artifactID)
+    {
+
+        if(isset($this->list[$artifactID]))
+        {
+            return $this->list[$artifactID];
+        }
+        return null;
+
+    }
+
     public function Delete($id)
     {
+        $this->list[$id]->Delete();
         unset($this->list[$id]);
+
         $this->save();
     }
 
