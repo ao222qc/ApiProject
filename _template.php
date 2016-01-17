@@ -9,5 +9,9 @@
         <a href="upload.php">Upload an artifact</a>
         <hr>
         <?= Template::$Body ?>
+        <br>
+        <br>
+        <hr>
+        <center><div>Site made by Adam Oooooh, Kevin Öööööhhh, dansken</div></center>
     </body>
 </html>
