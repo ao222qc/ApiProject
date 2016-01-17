@@ -16,6 +16,17 @@ echo '
 if (isset($_GET[$ID]))
 {
     $collection = $api->GetCollection($_GET[$ID]);
+
+    if(isset($_GET['delete']))
+    {
+        $artifact = $collection->GetArtifact($_GET['delete']);
+
+        if($artifact != NULL)
+        {
+            $collection->Delete($artifact->GetID());
+        }
+    }
+
     echo "
     <i>{$collection->GetID()}</i>
     <h2>{$collection->GetName()}</h2>
@@ -34,7 +45,9 @@ if (isset($_GET[$ID]))
         {
             echo "<a href='find.php?id={$item->GetID()}'>{$item->GetName()}</a>";
         }
-                echo " <a href='share.php?id={$item->GetID()}'>Share</a>";
+
+        echo " <a href='share.php?id={$item->GetID()}&fcid={$collection->GetID()}'>Share</a>";
+        echo " <a href='find.php?id={$collection->GetID()}&delete={$item->GetID()}'>Delete</a>";
         echo "</li>";
 
     }
