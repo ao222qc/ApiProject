@@ -26,9 +26,10 @@ if(isset($_GET["id"]) && isset($_GET["fcid"]))
 
 echo '
      <br>
-    <form action="" method="GET">
-         Artifact or subcollection ID.<br>
-        <input value="'. $itemID.'" name="id"> from collection <input value="'. $collectionID.'" name="fcid">
+     <form action="?" method="GET">
+        <input type=hidden value="'.$collectionID.'" name="fcid">
+        <input type=hidden value="'.$itemID.'" name="id">
+        Artifact <b>'.$itemID.'</b> from collection <b><a href="find.php?id='.$collectionID.'">'.$collectionID.'</a></b>
         <br>
         Collection ID <br>
         <input name="cid">
