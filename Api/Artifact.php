@@ -23,4 +23,15 @@
         {
           return $this->Filename;
         }
+
+        public function Delete()
+        {
+            if(file_exists(Api::ARTIFACTPATH.$this->ID))
+                unlink(Api::ARTIFACTPATH.$this->ID);
+        }
+
+        public function IsGhost()
+        {
+            return !file_exists(Api::ARTIFACTPATH.$this->ID);
+        }
     }
