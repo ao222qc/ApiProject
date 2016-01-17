@@ -24,15 +24,19 @@ if (isset($_GET[$ID]))
 
     foreach($collection->GetList() as $item)
     {
+        echo '<li>';
         if ($item instanceof Artifact)
         {
             $path = Api::APIPATH.Api::ARTIFACTPATH.$item->GetID();
-            echo "<li><a href='{$path}' download='{$item->GetFilename()}'><b>{$item->GetFilename()}</b></a> <i>({$item->GetID()})</i></li>";
+            echo "<a href='{$path}' download='{$item->GetFilename()}'><b>{$item->GetFilename()}</b></a> <i>({$item->GetID()})</i>";
         }
         elseif($item instanceof Collection)
         {
-            echo "<li><a href='find.php?id={$item->GetID()}'>{$item->GetName()}</a></li>";
+            echo "<a href='find.php?id={$item->GetID()}'>{$item->GetName()}</a>";
         }
+                echo " <a href='share.php?id={$item->GetID()}'>Share</a>";
+        echo "</li>";
+
     }
     echo "<li><a href='upload.php?CollectionID={$collection->GetID()}'>Upload artifact</a></li>";
     echo "</ul>";
