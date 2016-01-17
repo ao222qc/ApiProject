@@ -35,7 +35,7 @@ if(isset($_GET["id"]) && isset($_GET["cid"]))
 
 echo '
      <br>
-     <form enctype="multipart/form-data" action="" method="POST">
+     <form enctype="multipart/form-data" action="?cid='.$collectionID.'&id='.$itemID.'" method="POST">
         Artifact <b>'.$itemID.'</b> from collection <b><a href="find.php?id='.$collectionID.'">'.$collectionID.'</a></b>
         <br>
         <br>
